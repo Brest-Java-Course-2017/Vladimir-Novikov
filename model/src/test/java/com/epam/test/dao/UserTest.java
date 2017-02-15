@@ -1,9 +1,7 @@
-package com.epam.test.model;
+package com.epam.test.dao;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by mrinpus on 13.2.17.
