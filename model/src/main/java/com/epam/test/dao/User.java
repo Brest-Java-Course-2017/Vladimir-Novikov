@@ -3,8 +3,7 @@ package com.epam.test.dao;
 import java.util.Objects;
 
 /**
- * Created by mrinpus on 13.2.17.
- *
+ * Created by mrinpus on 20.2.17.
  */
 public class User {
 
@@ -17,17 +16,25 @@ public class User {
     private String description;
 
     public User() {
+    }
 
+    public User(String login, String password){
+
+        this.login = login;
+        this.password = password;
     }
 
     public User(Integer userId, String login, String password, String description) {
+
+        this(login,password);
         this.userId = userId;
-        this.login = login;
-        this.password = password;
         this.description = description;
+
     }
 
-    public Integer getUserId() { return userId; }
+    public Integer getUserId() {
+        return userId;
+    }
 
     public String getLogin() {
         return login;
@@ -53,7 +60,7 @@ public class User {
         this.password = password;
     }
 
-    public void setDescription(String description, String s, String userDescription) {
+    public void setDescription(String description) {
         this.description = description;
     }
 

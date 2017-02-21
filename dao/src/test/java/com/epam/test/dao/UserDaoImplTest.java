@@ -1,42 +1,45 @@
 package com.epam.test.dao;
 
-import com.epam.test.dao.UserDao;
-import org.junit.Assert;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import static org.junit.Assert.*;
 
-
-import java.util.List;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath*:test-spring-dao.xml"})
+/**
+ * Created by mrinpus on 22.2.17.
+ */
 public class UserDaoImplTest {
 
-    @Autowired
-    UserDao userDao;
-
+    private static final Logger LOGGER = LogManager.getLogger();
     @Test
-    public void getAllUsersTest() throws Exception {
+    public void getAllUsers() throws Exception {
 
-        List<User> users = userDao.getAllUsers();
-        assertTrue(users.size() == 2);
     }
 
     @Test
-    public void getUserByIdTest() throws Exception {
+    public void getUserById() throws Exception {
 
-        User user = userDao.getUserById(1);
-        assertNotNull(user);
-        assertEquals("userLogin1",user.getLogin());
     }
+
+    @Test
+    public void getUserByLogin() throws Exception {
+
+    }
+
+    @Test
+    public void addUser() throws Exception {
+
+    }
+
+    @Test
+    public void updateUser() throws Exception {
+
+    }
+
+    @Test
+    public void deleteUser() throws Exception {
+
+    }
+
 }
