@@ -80,7 +80,7 @@ public class UserDaoImpl implements UserDao {
     public User getUserByLogin(String login) throws DataAccessException {
 
         LOGGER.debug("getUserByLogin()", login);
-        SqlParameterSource namedParams = new MapSqlParameterSource("login", login);
+        SqlParameterSource namedParams = new MapSqlParameterSource("p_login", login);
         User user = namedParameterJdbcTemplate.queryForObject(getUserByLoginSql, namedParams, new UserRowMapper());
         return user;
     }
@@ -90,12 +90,12 @@ public class UserDaoImpl implements UserDao {
 
         LOGGER.debug("addUser(user): login ={}", user.getLogin());
         KeyHolder keyHolder = new GeneratedKeyHolder();
-        MapSqlParameterSource paramSourse = new MapSqlParameterSource();
-        paramSourse.addValue(USER_ID, user.getUserId());
-        paramSourse.addValue(LOGIN, user.getLogin());
-        paramSourse.addValue(PASSWORD, user.getPassword());
-        paramSourse.addValue(DESCRIPTION, user.getDescription());
-        namedParameterJdbcTemplate.update(addUserSql, paramSourse, keyHolder);
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue(USER_ID, user.getUserId());
+        paramSource.addValue(LOGIN, user.getLogin());
+        paramSource.addValue(PASSWORD, user.getPassword());
+        paramSource.addValue(DESCRIPTION, user.getDescription());
+        namedParameterJdbcTemplate.update(addUserSql, paramSource, keyHolder);
 
         return keyHolder.getKey().intValue();
     }

@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.epam.test</groupId>
     <artifactId>myapp</artifactId>
-    <version>${project.version}</version>
+    <version>1.0-SNAPSHOT</version>
   </parent>
 
   <properties>

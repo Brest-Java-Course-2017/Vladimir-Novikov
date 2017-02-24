@@ -4,7 +4,7 @@
 
   <groupId>com.epam.test</groupId>
   <artifactId>myapp</artifactId>
-  <version>${project.version}</version>
+  <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>myapp</name>
@@ -31,7 +31,7 @@
       <dependency>
         <groupId>com.epam.test</groupId>
         <artifactId>model</artifactId>
-        <version>${project.version}</version>
+        <version>1.0-SNAPSHOT</version>
       </dependency>
 
       <dependency>
@@ -43,6 +43,12 @@
       <dependency>
         <groupId>com.epam.test</groupId>
         <artifactId>dao</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.epam.test</groupId>
+        <artifactId>test-db</artifactId>
         <version>${project.version}</version>
       </dependency>
 
@@ -140,7 +146,7 @@
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>2.10.4</version>
           <configuration>
-            <!-- <executions>
+            <executions>
               <execution>
                 <id>aggregate</id>
                 <goals>
@@ -148,7 +154,7 @@
                 </goals>
                 <phase>site</phase>
               </execution>
-            </executions> -->
+            </executions>
           </configuration>
         </plugin>
 
